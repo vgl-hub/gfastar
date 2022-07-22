@@ -1,0 +1,3 @@
+[submodule "gfastats"]
+	path = gfastats
+	url = https://github.com/vgl-hub/gfastats.git
