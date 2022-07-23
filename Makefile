@@ -24,16 +24,16 @@ $(GFASTATS_LIBSFILES): gfastats
 
 .PHONY: gfastats
 gfastats:
-	$(MAKE) -C $(GFASTATS_SUBDIR)
+	$(MAKE) -j -C $(GFASTATS_SUBDIR)
 	
 .PHONY: gfalign
 gfalign:
-	$(MAKE) -C $(GFALIGN_SUBDIR)
+	$(MAKE) -j -C $(GFALIGN_SUBDIR)
 	
 $(BUILD):
 	-mkdir -p $@
 	
 clean:
-	$(MAKE) -C $(GFASTATS_SUBDIR) clean
-	$(MAKE) -C $(GFALIGN_SUBDIR) clean
+	$(MAKE) -j -C $(GFASTATS_SUBDIR) clean
+	$(MAKE) -j -C $(GFALIGN_SUBDIR) clean
 	$(RM) -r build
