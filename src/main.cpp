@@ -86,8 +86,6 @@ int main(int argc, char **argv) {
                 
             case 'h': // help
                 printf("gfastar [command]\n");
-                printf("genome size: estimated genome size for NG* statistics (optional).\n");
-                printf("header: target specific sequence by header, optionally with coordinates (optional).\n");
                 printf("\nOptions:\n");
                 printf("-v --version software version.\n");
                 printf("--cmd print $0 to stdout.\n");

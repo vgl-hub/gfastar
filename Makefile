@@ -8,13 +8,15 @@ TARGET = gfastar
 BUILD = build/bin
 SOURCE = src
 INCLUDE = include
-
-GFASTATS_SUBDIR := $(CURDIR)/gfastats
 LDFLAGS :=
 
+GFASTATS_SUBDIR := $(CURDIR)/gfastats
 GFASTATS_LIBSFILES := $(GFASTATS_SUBDIR)/$(SOURCE)/* $(GFASTATS_SUBDIR)/$(INCLUDE)/*
 
-main: $(SOURCE)/main.cpp $(GFASTATS_LIBSFILES) | $(BUILD)
+GFALIGN_SUBDIR := $(CURDIR)/gfalign
+GFALIGN_LIBSFILES := $(GFALIGN_SUBDIR)/$(SOURCE)/* $(GFALIGN_SUBDIR)/$(INCLUDE)/*
+
+main: $(SOURCE)/main.cpp $(GFASTATS_LIBSFILES) $(GFALIGN_LIBSFILES) | $(BUILD)
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(SOURCE)/main.cpp -o $(BUILD)/$(TARGET)
 
 $(GFASTATS_LIBSFILES): gfastats
@@ -24,9 +26,14 @@ $(GFASTATS_LIBSFILES): gfastats
 gfastats:
 	$(MAKE) -C $(GFASTATS_SUBDIR)
 	
+.PHONY: gfalign
+gfalign:
+	$(MAKE) -C $(GFALIGN_SUBDIR)
+	
 $(BUILD):
 	-mkdir -p $@
 	
 clean:
 	$(MAKE) -C $(GFASTATS_SUBDIR) clean
+	$(MAKE) -C $(GFALIGN_SUBDIR) clean
 	$(RM) -r build

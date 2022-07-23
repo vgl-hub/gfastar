@@ -1,3 +1,6 @@
 [submodule "gfastats"]
 	path = gfastats
 	url = https://github.com/vgl-hub/gfastats.git
+[submodule "gfalign"]
+	path = gfalign
+	url = https://github.com/vgl-hub/gfalign
