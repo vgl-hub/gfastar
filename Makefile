@@ -21,6 +21,9 @@ main: $(SOURCE)/main.cpp $(GFASTATS_LIBSFILES) $(GFALIGN_LIBSFILES) | $(BUILD)
 
 $(GFASTATS_LIBSFILES): gfastats
 	@# Do nothing
+	
+$(GFALIGN_LIBSFILES): gfalign
+	@# Do nothing
 
 .PHONY: gfastats
 gfastats:
