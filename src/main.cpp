@@ -30,6 +30,7 @@ int main(int argc, char **argv) {
     
     const static std::unordered_map<std::string,int> tools{
         {"stats",1}
+        {"align",2}
     };
     
     while (arguments) { // loop through argv
@@ -59,12 +60,13 @@ int main(int argc, char **argv) {
                                 
                 switch (tools.count(optarg) ? tools.at(optarg) : 0) {
                     case 1:
-                        
                         cmd = "gfastats/build/bin/gfastats" + getArgs(optarg, argc, argv);;
                         
-                        std::cout<<"Invoking: "<<cmd<<std::endl;
+                        arguments = false;
                         
-                        std::system(cmd.c_str());
+                        break;
+                    case 2:
+                        cmd = "gfalign/build/bin/gfalign" + getArgs(optarg, argc, argv);;
                         
                         arguments = false;
                         
@@ -107,6 +109,9 @@ int main(int argc, char **argv) {
         printf("\n");
         
     }
+    
+    std::cout<<"Invoking: "<<cmd<<std::endl;
+    std::system(cmd.c_str());
     
     exit(EXIT_SUCCESS);
     
