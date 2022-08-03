@@ -1,2 +1,0 @@
-# gfastar
-assembly graph tools
