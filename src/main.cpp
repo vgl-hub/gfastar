@@ -68,7 +68,7 @@ int main(int argc, char **argv) {
                         break;
 
                     case 2:
-                        cmd = "gfalign/build/bin/rdeval" + getArgs(optarg, argc, argv);;
+                        cmd = "rdeval/build/bin/rdeval" + getArgs(optarg, argc, argv);;
                         
                         arguments = false;
                         
