@@ -29,8 +29,9 @@ int main(int argc, char **argv) {
     };
     
     const static std::unordered_map<std::string,int> tools{
-        {"stats",1}
-        {"align",2}
+        {"gfastats",1},
+        {"rdeval",2},
+        {"gfalign",3}
     };
     
     while (arguments) { // loop through argv
@@ -65,7 +66,15 @@ int main(int argc, char **argv) {
                         arguments = false;
                         
                         break;
+
                     case 2:
+                        cmd = "gfalign/build/bin/rdeval" + getArgs(optarg, argc, argv);;
+                        
+                        arguments = false;
+                        
+                        break;
+                        
+                    case 3:
                         cmd = "gfalign/build/bin/gfalign" + getArgs(optarg, argc, argv);;
                         
                         arguments = false;
@@ -87,7 +96,11 @@ int main(int argc, char **argv) {
                 exit(0);
                 
             case 'h': // help
-                printf("gfastar [command]\n");
+                printf("gfastar [options] [tool] [arguments]\n");
+                printf("\nTools:\n");
+                printf("gfastats\n");
+                printf("rdeval\n");
+                printf("gfalign\n");
                 printf("\nOptions:\n");
                 printf("-v --version software version.\n");
                 printf("--cmd print $0 to stdout.\n");
