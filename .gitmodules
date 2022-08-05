@@ -1,15 +1,12 @@
 [submodule "gfastats"]
 	path = gfastats
-	url = https://github.com/vgl-hub/gfastats.git
-    ignore = untracked
-    ignore = dirty
+	url = https://github.com/vgl-hub/gfastats
+	branch = main
+[submodule "gfalign"]
+	path = gfalign
+	url = https://github.com/vgl-hub/gfalign
+	branch = main
 [submodule "rdeval"]
 	path = rdeval
-	url = https://github.com/vgl-hub/rdeval.git
-    ignore = untracked
-    ignore = dirty
- [submodule "gfalign"]
-    path = gfalign
-    url = https://github.com/vgl-hub/gfalign
-    ignore = untracked
-    ignore = dirty
+	url = https://github.com/vgl-hub/rdeval
+	branch = main
